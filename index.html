@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>واكلة دماغي ❤️</title>
 
 <style>
@@ -30,7 +31,10 @@ body{
     display:none !important;
 }
 
-/* الخلفية */
+/* =========================
+   BACKGROUND HEARTS
+========================= */
+
 .bg-heart{
     position:fixed;
     color:rgba(255,80,130,.12);
@@ -51,15 +55,25 @@ body{
         transform:translateY(30px) rotate(0deg);
         opacity:0;
     }
-    20%{opacity:1}
-    80%{opacity:1}
+
+    20%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
     100%{
         transform:translateY(-120px) rotate(25deg);
         opacity:0;
     }
 }
 
-/* LOGIN */
+/* =========================
+   LOGIN
+========================= */
+
 .screen{
     min-height:100vh;
     display:flex;
@@ -75,12 +89,15 @@ body{
     max-width:400px;
     padding:45px 28px;
     text-align:center;
+
     background:rgba(255,255,255,.07);
     border:1px solid rgba(255,150,180,.2);
     border-radius:30px;
+
     box-shadow:
         0 0 60px rgba(255,20,100,.15),
         inset 0 0 30px rgba(255,255,255,.03);
+
     backdrop-filter:blur(15px);
 }
 
@@ -91,8 +108,13 @@ body{
 }
 
 @keyframes heartbeat{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.13)}
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.13);
+    }
 }
 
 .login-box h1{
@@ -148,7 +170,10 @@ button:active{
     margin-top:15px;
 }
 
-/* INTRO */
+/* =========================
+   INTRO
+========================= */
+
 .intro{
     min-height:100vh;
     display:flex;
@@ -188,7 +213,10 @@ button:active{
     color:#ffd6df;
 }
 
-/* HEART SECTION */
+/* =========================
+   HEART GAME
+========================= */
+
 .game{
     min-height:100vh;
     display:flex;
@@ -212,6 +240,7 @@ button:active{
 }
 
 /* القلب المقفول */
+
 .locked-area{
     width:220px;
     height:220px;
@@ -287,16 +316,22 @@ button:active{
     top:0;
 }
 
-/* الرسالة بعد فتح القلب */
+/* =========================
+   OPEN CARD
+========================= */
+
 .open-card{
     width:100%;
     max-width:650px;
     margin-top:30px;
     padding:35px 25px;
     border-radius:30px;
+
     background:rgba(255,255,255,.07);
     border:1px solid rgba(255,130,170,.25);
+
     box-shadow:0 0 45px rgba(255,20,90,.15);
+
     animation:appear .8s ease;
 }
 
@@ -305,6 +340,7 @@ button:active{
         opacity:0;
         transform:translateY(30px) scale(.95);
     }
+
     to{
         opacity:1;
         transform:translateY(0) scale(1);
@@ -329,7 +365,10 @@ button:active{
     font-weight:bold;
 }
 
-/* ZIPPER */
+/* =========================
+   ZIPPER
+========================= */
+
 .zip-section{
     min-height:100vh;
     display:flex;
@@ -347,7 +386,7 @@ button:active{
     margin-bottom:12px;
 }
 
-.zip-section p{
+.zip-section > p{
     color:#ffb6c9;
     margin-bottom:35px;
 }
@@ -359,6 +398,7 @@ button:active{
     position:relative;
     overflow:hidden;
     border-radius:25px;
+
     background:
         linear-gradient(
             90deg,
@@ -366,7 +406,9 @@ button:active{
             rgba(255,30,100,.08),
             rgba(255,255,255,.04)
         );
+
     border:1px solid rgba(255,130,170,.18);
+
     box-shadow:0 0 40px rgba(255,20,90,.12);
 }
 
@@ -426,12 +468,23 @@ button:active{
     left:50%;
     top:10px;
     transform:translateX(-50%);
+
     width:55px;
     height:55px;
+
     border-radius:50%;
-    background:linear-gradient(135deg,#ff3d70,#b8104b);
+
+    background:linear-gradient(
+        135deg,
+        #ff3d70,
+        #b8104b
+    );
+
     border:4px solid #ffd0dc;
-    box-shadow:0 0 25px rgba(255,30,90,.7);
+
+    box-shadow:
+        0 0 25px rgba(255,30,90,.7);
+
     cursor:grab;
     z-index:5;
     touch-action:none;
@@ -457,20 +510,41 @@ button:active{
     font-size:16px;
 }
 
-/* الرسالة النهائية */
+/* =========================
+   VIDEO / FINAL
+========================= */
+
 .final-message{
     width:100%;
-    max-width:700px;
-    padding:40px 25px;
+    max-width:750px;
+    padding:35px 25px;
     border-radius:30px;
+
     background:rgba(255,255,255,.07);
     border:1px solid rgba(255,130,170,.2);
+
+    box-shadow:0 0 45px rgba(255,20,90,.15);
+
     animation:appear .8s ease;
 }
 
 .final-message .big{
-    font-size:35px;
+    font-size:45px;
     margin-bottom:20px;
+}
+
+#loveVideo{
+    display:block;
+    width:100%;
+    max-width:650px;
+    margin:0 auto 25px;
+
+    border-radius:20px;
+
+    background:#000;
+
+    box-shadow:
+        0 0 35px rgba(255,30,90,.25);
 }
 
 .final-message p{
@@ -479,7 +553,10 @@ button:active{
     line-height:2;
 }
 
-/* موبايل */
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:600px){
 
     .intro h1{
@@ -503,8 +580,16 @@ button:active{
         font-size:18px;
     }
 
+    .open-card .strong{
+        font-size:21px;
+    }
+
     .zipper{
         height:330px;
+    }
+
+    .final-message p{
+        font-size:18px;
     }
 }
 </style>
@@ -512,6 +597,7 @@ button:active{
 
 <body>
 
+<!-- الخلفية -->
 <div class="bg-heart h1">♥</div>
 <div class="bg-heart h2">♥</div>
 <div class="bg-heart h3">♥</div>
@@ -519,7 +605,10 @@ button:active{
 <div class="bg-heart h5">♥</div>
 
 
-<!-- شاشة كلمة السر -->
+<!-- =========================
+     LOGIN
+========================= -->
+
 <section id="loginScreen" class="screen">
 
     <div class="login-box">
@@ -550,15 +639,22 @@ button:active{
 </section>
 
 
-<!-- الموقع بعد كلمة السر -->
+<!-- =========================
+     MAIN SITE
+========================= -->
+
 <main id="mainSite" class="hidden">
 
+
     <!-- المقدمة -->
+
     <section class="intro">
 
         <div class="main-heart">❤️</div>
 
-        <h1>الجيش حرر سينا...</h1>
+        <h1>
+            الجيش حرر سينا...
+        </h1>
 
         <h2>
             وإنتِ مش راضية تحرري قلبي يا مفتريّة 😂❤️
@@ -573,14 +669,22 @@ button:active{
     </section>
 
 
-    <!-- القلب -->
+    <!-- =========================
+         HEART
+    ========================= -->
+
     <section class="game">
 
-        <h2>طب استني... في حاجة هنا 👀</h2>
+        <h2>
+            طب استني... في حاجة هنا 👀
+        </h2>
 
         <div class="game-sub">
             دوسي على القلب وشوفي بنفسك ❤️
         </div>
+
+
+        <!-- القلب المقفول -->
 
         <div
             id="lockedHeart"
@@ -589,17 +693,27 @@ button:active{
         >
 
             <div class="heart-shape"></div>
+
             <div class="heart-lock"></div>
 
         </div>
 
 
-        <div id="openCard" class="open-card hidden">
+        <!-- رسالة القلب -->
 
-            <div class="open-heart">💖</div>
+        <div
+            id="openCard"
+            class="open-card hidden"
+        >
+
+            <div class="open-heart">
+                💖
+            </div>
 
             <p>
+
                 القلب ده كان مقفول...
+
                 <br>
 
                 بس للأسف إنتِ عرفتي كلمة السر من زمان. ❤️
@@ -628,6 +742,7 @@ button:active{
 
                 كمّلي لتحت...
                 في حاجة مستنياكي 👀
+
             </p>
 
         </div>
@@ -635,22 +750,34 @@ button:active{
     </section>
 
 
-    <!-- السوستة -->
+    <!-- =========================
+         ZIPPER
+    ========================= -->
+
     <section class="zip-section">
 
-        <h2>آخر حاجة... 👀</h2>
+        <h2>
+            آخر حاجة... 👀
+        </h2>
 
         <p>
             السوستة دي لازم تتفتح للآخر ❤️
         </p>
 
-        <div id="zipper" class="zipper">
+
+        <div
+            id="zipper"
+            class="zipper"
+        >
 
             <div class="zip-side left"></div>
+
             <div class="zip-side right"></div>
 
             <div class="zip-line"></div>
 
+
+            <!-- أسنان السوستة -->
 
             <div class="teeth left">
 
@@ -694,8 +821,15 @@ button:active{
             </div>
 
 
-            <div id="zipHandle" class="zip-handle">
+            <!-- مقبض السوستة -->
+
+            <div
+                id="zipHandle"
+                class="zip-handle"
+            >
+
                 <span></span>
+
             </div>
 
         </div>
@@ -706,23 +840,41 @@ button:active{
         </div>
 
 
+        <!-- =========================
+             VIDEO
+        ========================= -->
+
         <div
             id="finalMessage"
             class="final-message hidden"
             style="margin-top:35px;"
         >
 
-            <div class="big">❤️</div>
+            <div class="big">
+                ❤️
+            </div>
+
+
+            <video
+                id="loveVideo"
+                controls
+                playsinline
+                preload="metadata"
+            >
+
+                <source
+                    src="VID_20261004_134658_904.mp4"
+                    type="video/mp4"
+                >
+
+                المتصفح لا يدعم تشغيل الفيديو.
+
+            </video>
+
 
             <p>
-                لسه هنا؟ 😂❤️
-                <br><br>
-
-                تمام...
-                <br>
-
-                الفيديو هنحطه هنا بعدين،
-                لما نرفع الموقع على GitHub ونظبطه صح.
+                من اللحظة دي عرفت إني وقعت وقعة ملهاش زي، مفيهاش قومة...
+                ومش هقوم منها غير وإنتِ في حضني يا بنوتي ومراتي وحياتي كلها. ❤️
             </p>
 
         </div>
@@ -735,7 +887,7 @@ button:active{
 <script>
 
 /* =========================
-   كلمة السر
+   PASSWORD
 ========================= */
 
 function checkPassword(){
@@ -746,31 +898,37 @@ function checkPassword(){
     const wrong =
         document.getElementById("wrong");
 
+
     if(password === "واكله دماغي"){
 
         document
             .getElementById("loginScreen")
             .classList.add("hidden");
 
+
         document
             .getElementById("mainSite")
             .classList.remove("hidden");
+
 
         wrong.innerText = "";
 
         window.scrollTo(0,0);
 
-    }else{
+    }
+
+    else{
 
         wrong.innerText =
             "لأ لأ 😂 جربي تاني...";
 
     }
+
 }
 
 
 /* =========================
-   فتح القلب
+   OPEN HEART
 ========================= */
 
 function openHeart(){
@@ -778,6 +936,7 @@ function openHeart(){
     document
         .getElementById("lockedHeart")
         .classList.add("hidden");
+
 
     document
         .getElementById("openCard")
@@ -787,7 +946,7 @@ function openHeart(){
 
 
 /* =========================
-   السوستة
+   ZIPPER
 ========================= */
 
 const handle =
@@ -799,33 +958,58 @@ const zipper =
 const finalMessage =
     document.getElementById("finalMessage");
 
+const loveVideo =
+    document.getElementById("loveVideo");
+
+
 let dragging = false;
 
+let videoShown = false;
+
+
+/* تحريك السوستة */
 
 function moveZipper(clientY){
 
     const rect =
         zipper.getBoundingClientRect();
 
+
     let y =
         clientY - rect.top;
 
+
     const minY = 10;
+
 
     const maxY =
         rect.height - 65;
+
 
     y = Math.max(
         minY,
         Math.min(y,maxY)
     );
 
-    handle.style.top = y + "px";
+
+    handle.style.top =
+        y + "px";
 
 
-    if(y >= maxY - 5){
+    /* وصلت للآخر */
 
-        finalMessage.classList.remove("hidden");
+    if(
+        y >= maxY - 5 &&
+        !videoShown
+    ){
+
+        videoShown = true;
+
+
+        finalMessage
+            .classList
+            .remove("hidden");
+
 
         setTimeout(function(){
 
@@ -841,7 +1025,9 @@ function moveZipper(clientY){
 }
 
 
-/* الماوس */
+/* =========================
+   MOUSE
+========================= */
 
 handle.addEventListener(
     "mousedown",
@@ -859,7 +1045,9 @@ document.addEventListener(
 
         if(dragging){
 
-            moveZipper(e.clientY);
+            moveZipper(
+                e.clientY
+            );
 
         }
 
@@ -877,7 +1065,9 @@ document.addEventListener(
 );
 
 
-/* الموبايل */
+/* =========================
+   TOUCH / MOBILE
+========================= */
 
 handle.addEventListener(
     "touchstart",
@@ -888,7 +1078,9 @@ handle.addEventListener(
         e.preventDefault();
 
     },
-    {passive:false}
+    {
+        passive:false
+    }
 );
 
 
@@ -907,7 +1099,9 @@ document.addEventListener(
         }
 
     },
-    {passive:false}
+    {
+        passive:false
+    }
 );
 
 
@@ -921,7 +1115,9 @@ document.addEventListener(
 );
 
 
-/* Enter في كلمة السر */
+/* =========================
+   ENTER PASSWORD
+========================= */
 
 document
     .getElementById("password")
