@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>واكلة دماغي ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    color:white;
+    background:
+        radial-gradient(circle at 20% 20%,#5c102d 0%,transparent 30%),
+        radial-gradient(circle at 80% 70%,#40102b 0%,transparent 30%),
+        linear-gradient(135deg,#09000b,#210014,#0d0012);
+    overflow-x:hidden;
+}
+
+.hidden{
+    display:none !important;
+}
+
+/* الخلفية */
+.bg-heart{
+    position:fixed;
+    color:rgba(255,80,130,.12);
+    font-size:30px;
+    pointer-events:none;
+    animation:float 8s linear infinite;
+    z-index:0;
+}
+
+.h1{left:8%;top:20%}
+.h2{left:85%;top:15%;animation-delay:2s}
+.h3{left:15%;top:75%;animation-delay:4s}
+.h4{left:78%;top:80%;animation-delay:1s}
+.h5{left:50%;top:10%;animation-delay:3s}
+
+@keyframes float{
+    0%{
+        transform:translateY(30px) rotate(0deg);
+        opacity:0;
+    }
+    20%{opacity:1}
+    80%{opacity:1}
+    100%{
+        transform:translateY(-120px) rotate(25deg);
+        opacity:0;
+    }
+}
+
+/* LOGIN */
+.screen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    position:relative;
+    z-index:2;
+}
+
+.login-box{
+    width:100%;
+    max-width:400px;
+    padding:45px 28px;
+    text-align:center;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,150,180,.2);
+    border-radius:30px;
+    box-shadow:
+        0 0 60px rgba(255,20,100,.15),
+        inset 0 0 30px rgba(255,255,255,.03);
+    backdrop-filter:blur(15px);
+}
+
+.login-heart{
+    font-size:75px;
+    margin-bottom:20px;
+    animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.13)}
+}
+
+.login-box h1{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.login-box p{
+    color:#ffb6c9;
+    margin-bottom:25px;
+    line-height:1.8;
+}
+
+input{
+    width:100%;
+    padding:16px;
+    border:1px solid rgba(255,150,180,.2);
+    border-radius:18px;
+    outline:none;
+    background:rgba(0,0,0,.25);
+    color:white;
+    text-align:center;
+    font-size:17px;
+    margin-bottom:15px;
+}
+
+input::placeholder{
+    color:#c99aa8;
+}
+
+button{
+    border:0;
+    padding:14px 30px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#ff2d62,#c81451);
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(255,20,90,.3);
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+#wrong{
+    color:#ff6b8d;
+    margin-top:15px;
+}
+
+/* INTRO */
+.intro{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:35px 25px;
+    position:relative;
+    z-index:1;
+}
+
+.main-heart{
+    font-size:90px;
+    filter:drop-shadow(0 0 25px rgba(255,30,100,.5));
+    animation:heartbeat 1.2s infinite;
+    margin-bottom:25px;
+}
+
+.intro h1{
+    font-size:38px;
+    margin-bottom:18px;
+}
+
+.intro h2{
+    color:#ff7193;
+    font-size:25px;
+    line-height:1.6;
+    max-width:700px;
+}
+
+.intro p{
+    margin-top:25px;
+    max-width:650px;
+    font-size:21px;
+    line-height:2;
+    color:#ffd6df;
+}
+
+/* HEART SECTION */
+.game{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+    position:relative;
+    z-index:1;
+}
+
+.game h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.game-sub{
+    color:#ffb6c9;
+    margin-bottom:40px;
+}
+
+/* القلب المقفول */
+.locked-area{
+    width:220px;
+    height:220px;
+    position:relative;
+    cursor:pointer;
+    transition:.5s;
+}
+
+.locked-area:hover{
+    transform:scale(1.05);
+}
+
+.heart-shape{
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#ff285e;
+    transform:rotate(-45deg);
+    left:50px;
+    top:45px;
+    filter:drop-shadow(0 0 30px rgba(255,30,90,.6));
+}
+
+.heart-shape:before,
+.heart-shape:after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#ff285e;
+    border-radius:50%;
+}
+
+.heart-shape:before{
+    top:-60px;
+    left:0;
+}
+
+.heart-shape:after{
+    top:0;
+    left:60px;
+}
+
+.heart-lock{
+    position:absolute;
+    z-index:3;
+    left:91px;
+    top:88px;
+    width:40px;
+    height:34px;
+    background:white;
+    border-radius:6px;
+}
+
+.heart-lock:before{
+    content:"";
+    position:absolute;
+    width:22px;
+    height:20px;
+    border:5px solid white;
+    border-bottom:0;
+    border-radius:15px 15px 0 0;
+    left:4px;
+    top:-18px;
+}
+
+.heart-lock:after{
+    content:"•";
+    color:#ff285e;
+    font-size:25px;
+    position:absolute;
+    left:14px;
+    top:0;
+}
+
+/* الرسالة بعد فتح القلب */
+.open-card{
+    width:100%;
+    max-width:650px;
+    margin-top:30px;
+    padding:35px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,130,170,.25);
+    box-shadow:0 0 45px rgba(255,20,90,.15);
+    animation:appear .8s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.open-heart{
+    font-size:75px;
+    margin-bottom:20px;
+    animation:heartbeat 1.2s infinite;
+}
+
+.open-card p{
+    color:#ffdce5;
+    font-size:20px;
+    line-height:2;
+}
+
+.open-card .strong{
+    color:#ff7193;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* ZIPPER */
+.zip-section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+    position:relative;
+    z-index:1;
+}
+
+.zip-section h2{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.zip-section p{
+    color:#ffb6c9;
+    margin-bottom:35px;
+}
+
+.zipper{
+    width:90%;
+    max-width:500px;
+    height:380px;
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.04),
+            rgba(255,30,100,.08),
+            rgba(255,255,255,.04)
+        );
+    border:1px solid rgba(255,130,170,.18);
+    box-shadow:0 0 40px rgba(255,20,90,.12);
+}
+
+.zip-side{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:50%;
+    background:rgba(255,255,255,.025);
+}
+
+.zip-side.left{
+    left:0;
+}
+
+.zip-side.right{
+    right:0;
+}
+
+.zip-line{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:#ff3b70;
+    left:50%;
+    transform:translateX(-50%);
+    box-shadow:0 0 15px rgba(255,30,90,.7);
+}
+
+.teeth{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:20px;
+}
+
+.teeth.left{
+    left:calc(50% - 25px);
+}
+
+.teeth.right{
+    right:calc(50% - 25px);
+}
+
+.tooth{
+    width:14px;
+    height:5px;
+    background:#ff7193;
+    margin:10px 0;
+    border-radius:3px;
+    box-shadow:0 0 8px rgba(255,50,100,.5);
+}
+
+.zip-handle{
+    position:absolute;
+    left:50%;
+    top:10px;
+    transform:translateX(-50%);
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ff3d70,#b8104b);
+    border:4px solid #ffd0dc;
+    box-shadow:0 0 25px rgba(255,30,90,.7);
+    cursor:grab;
+    z-index:5;
+    touch-action:none;
+}
+
+.zip-handle:active{
+    cursor:grabbing;
+}
+
+.zip-handle span{
+    display:block;
+    width:10px;
+    height:10px;
+    border-right:3px solid white;
+    border-bottom:3px solid white;
+    transform:rotate(45deg);
+    margin:17px auto;
+}
+
+.zip-hint{
+    margin-top:20px;
+    color:#ff7193;
+    font-size:16px;
+}
+
+/* الرسالة النهائية */
+.final-message{
+    width:100%;
+    max-width:700px;
+    padding:40px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,130,170,.2);
+    animation:appear .8s ease;
+}
+
+.final-message .big{
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.final-message p{
+    color:#ffdce5;
+    font-size:20px;
+    line-height:2;
+}
+
+/* موبايل */
+@media(max-width:600px){
+
+    .intro h1{
+        font-size:30px;
+    }
+
+    .intro h2{
+        font-size:21px;
+    }
+
+    .intro p{
+        font-size:18px;
+    }
+
+    .game h2,
+    .zip-section h2{
+        font-size:25px;
+    }
+
+    .open-card p{
+        font-size:18px;
+    }
+
+    .zipper{
+        height:330px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-heart h1">♥</div>
+<div class="bg-heart h2">♥</div>
+<div class="bg-heart h3">♥</div>
+<div class="bg-heart h4">♥</div>
+<div class="bg-heart h5">♥</div>
+
+
+<!-- شاشة كلمة السر -->
+<section id="loginScreen" class="screen">
+
+    <div class="login-box">
+
+        <div class="login-heart">❤️</div>
+
+        <h1>عندي حاجة ليكي 👀</h1>
+
+        <p>
+            بس الأول...<br>
+            دخلي كلمة السر ❤️
+        </p>
+
+        <input
+            id="password"
+            type="password"
+            placeholder="كلمة السر"
+        >
+
+        <button onclick="checkPassword()">
+            دخول ❤️
+        </button>
+
+        <div id="wrong"></div>
+
+    </div>
+
+</section>
+
+
+<!-- الموقع بعد كلمة السر -->
+<main id="mainSite" class="hidden">
+
+    <!-- المقدمة -->
+    <section class="intro">
+
+        <div class="main-heart">❤️</div>
+
+        <h1>الجيش حرر سينا...</h1>
+
+        <h2>
+            وإنتِ مش راضية تحرري قلبي يا مفتريّة 😂❤️
+        </h2>
+
+        <p>
+            بس بصراحة هو مبسوط معاكي،
+            وعايز يكمل معاكي،
+            ومش قادر يروح لغيرك. ❤️
+        </p>
+
+    </section>
+
+
+    <!-- القلب -->
+    <section class="game">
+
+        <h2>طب استني... في حاجة هنا 👀</h2>
+
+        <div class="game-sub">
+            دوسي على القلب وشوفي بنفسك ❤️
+        </div>
+
+        <div
+            id="lockedHeart"
+            class="locked-area"
+            onclick="openHeart()"
+        >
+
+            <div class="heart-shape"></div>
+            <div class="heart-lock"></div>
+
+        </div>
+
+
+        <div id="openCard" class="open-card hidden">
+
+            <div class="open-heart">💖</div>
+
+            <p>
+                القلب ده كان مقفول...
+                <br>
+
+                بس للأسف إنتِ عرفتي كلمة السر من زمان. ❤️
+
+                <br><br>
+
+                خلاص... اعترفنا.
+
+                <br>
+
+                <span class="strong">
+                    إنتِ من الحاجات اللي مقدرش أخسرها...
+                </span>
+
+                <br>
+
+                عشان إنتِ أنا أصلًا،
+
+                <br>
+
+                <span class="strong">
+                    إحنا واحد. ❤️
+                </span>
+
+                <br><br>
+
+                كمّلي لتحت...
+                في حاجة مستنياكي 👀
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- السوستة -->
+    <section class="zip-section">
+
+        <h2>آخر حاجة... 👀</h2>
+
+        <p>
+            السوستة دي لازم تتفتح للآخر ❤️
+        </p>
+
+        <div id="zipper" class="zipper">
+
+            <div class="zip-side left"></div>
+            <div class="zip-side right"></div>
+
+            <div class="zip-line"></div>
+
+
+            <div class="teeth left">
+
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+
+            </div>
+
+
+            <div class="teeth right">
+
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+                <div class="tooth"></div>
+
+            </div>
+
+
+            <div id="zipHandle" class="zip-handle">
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <div class="zip-hint">
+            اسحبي الدائرة لتحت 👆
+        </div>
+
+
+        <div
+            id="finalMessage"
+            class="final-message hidden"
+            style="margin-top:35px;"
+        >
+
+            <div class="big">❤️</div>
+
+            <p>
+                لسه هنا؟ 😂❤️
+                <br><br>
+
+                تمام...
+                <br>
+
+                الفيديو هنحطه هنا بعدين،
+                لما نرفع الموقع على GitHub ونظبطه صح.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+/* =========================
+   كلمة السر
+========================= */
+
+function checkPassword(){
+
+    const password =
+        document.getElementById("password").value;
+
+    const wrong =
+        document.getElementById("wrong");
+
+    if(password === "واكله دماغي"){
+
+        document
+            .getElementById("loginScreen")
+            .classList.add("hidden");
+
+        document
+            .getElementById("mainSite")
+            .classList.remove("hidden");
+
+        wrong.innerText = "";
+
+        window.scrollTo(0,0);
+
+    }else{
+
+        wrong.innerText =
+            "لأ لأ 😂 جربي تاني...";
+
+    }
+}
+
+
+/* =========================
+   فتح القلب
+========================= */
+
+function openHeart(){
+
+    document
+        .getElementById("lockedHeart")
+        .classList.add("hidden");
+
+    document
+        .getElementById("openCard")
+        .classList.remove("hidden");
+
+}
+
+
+/* =========================
+   السوستة
+========================= */
+
+const handle =
+    document.getElementById("zipHandle");
+
+const zipper =
+    document.getElementById("zipper");
+
+const finalMessage =
+    document.getElementById("finalMessage");
+
+let dragging = false;
+
+
+function moveZipper(clientY){
+
+    const rect =
+        zipper.getBoundingClientRect();
+
+    let y =
+        clientY - rect.top;
+
+    const minY = 10;
+
+    const maxY =
+        rect.height - 65;
+
+    y = Math.max(
+        minY,
+        Math.min(y,maxY)
+    );
+
+    handle.style.top = y + "px";
+
+
+    if(y >= maxY - 5){
+
+        finalMessage.classList.remove("hidden");
+
+        setTimeout(function(){
+
+            finalMessage.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        },200);
+
+    }
+
+}
+
+
+/* الماوس */
+
+handle.addEventListener(
+    "mousedown",
+    function(){
+
+        dragging = true;
+
+    }
+);
+
+
+document.addEventListener(
+    "mousemove",
+    function(e){
+
+        if(dragging){
+
+            moveZipper(e.clientY);
+
+        }
+
+    }
+);
+
+
+document.addEventListener(
+    "mouseup",
+    function(){
+
+        dragging = false;
+
+    }
+);
+
+
+/* الموبايل */
+
+handle.addEventListener(
+    "touchstart",
+    function(e){
+
+        dragging = true;
+
+        e.preventDefault();
+
+    },
+    {passive:false}
+);
+
+
+document.addEventListener(
+    "touchmove",
+    function(e){
+
+        if(dragging){
+
+            moveZipper(
+                e.touches[0].clientY
+            );
+
+            e.preventDefault();
+
+        }
+
+    },
+    {passive:false}
+);
+
+
+document.addEventListener(
+    "touchend",
+    function(){
+
+        dragging = false;
+
+    }
+);
+
+
+/* Enter في كلمة السر */
+
+document
+    .getElementById("password")
+    .addEventListener(
+        "keydown",
+        function(e){
+
+            if(e.key === "Enter"){
+
+                checkPassword();
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
